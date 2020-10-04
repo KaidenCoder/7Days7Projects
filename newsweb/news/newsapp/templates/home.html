@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 text-center">BREAKING BAD</h1>
+        <p class="lead text-center">Characters from Breaking Bad</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        {% for x in api%}
+
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ x.img }}" class="card-img-top" alt="{{ x.source.name }}" width="300" height="400">
+                <div class="card-body">
+                    <h5 class="card-title">{{ x.name }}</h5>
+                    <p class="card-text">Occupation: {{ x.occupation}}</p>
+                    <!-- <a href="{{ x.url }}" class="btn btn-primary" target="_blank">Read more..</a> -->
+                </div>
+            </div>
+            <br>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
