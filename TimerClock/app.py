@@ -7,17 +7,17 @@ root.title('Kurosaki')
 root.geometry("600x400")
 
 def clock():
-    hour = time.strftime("%H")
+    hour = time.strftime("%I")
     minute = time.strftime("%M")
     second = time.strftime("%S")
     day = time.strftime("%A")
     am_pm = time.strftime("%p")
-    time_zone = time.strftime("%Z")
+    time_zone = time.strftime("%x")
 
     my_label.config(text=hour + ":" + minute + ":" + second + " " + am_pm)
     my_label.after(1000, clock)
 
-    my_label2.config(text=time_zone + " " +  day)
+    my_label2.config(text=time_zone + " " + day)
 
 def update():
     my_label.config(text="New Text")
